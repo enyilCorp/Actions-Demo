@@ -1,0 +1,11 @@
+on:
+  workflow_run:
+    types:
+      - completed
+jobs:
+  deploy:
+    name: Deploy to production
+    runs-on: ubuntu-latest
+	steps:
+	  - name: Deploy to production
+			run: echo "Specific deploy steps..."
