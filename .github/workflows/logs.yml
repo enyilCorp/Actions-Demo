@@ -2,6 +2,7 @@ on:
   workflow_run:
     types:
       - completed
+  workflow_dispatch:
 jobs:
   deploy:
     name: Deploy to production
