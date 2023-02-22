@@ -1,4 +1,4 @@
 # Actions-Demo
 A sample repository to showcase GitHub Actions.
 
-This is a change!
+This is a change.
