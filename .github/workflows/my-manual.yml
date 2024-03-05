@@ -15,7 +15,8 @@ on:
         default: 'World'
         # Input has to be provided for the workflow to run
         required: true
-
+env:
+ INJECTED_ENV_VAR: ${{ secrets[github.event.inputs.name] }}
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "greet"
@@ -28,4 +29,6 @@ jobs:
         run: echo "my secret is ${{ secrets.AWS_ACCESS_KEY_ID }}"
       # Runs a single command using the runners shell
       - name: Send greeting
-        run: echo "Hello ${{ github.event.inputs.name }}"
+        run: |
+              echo "Hello ${{ github.event.inputs.name }}"
+              echo "Hello ${{ secrets.INJECTED_ENV_VAR }}"
